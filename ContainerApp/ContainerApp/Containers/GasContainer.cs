@@ -6,7 +6,7 @@ namespace ContainerApp.Containers;
 public class GasContainer : Container, IHazardNotifier
 {
     public double Pressure { get; set; }
-    private bool IsHazardous { get; set; }
+    public bool IsHazardous { get; set; }
 
     public GasContainer(double height, double ownWeight, double depth, string serialNumber, double maxCapacity, double pressure, bool isHazardous) : base(height, ownWeight, depth, serialNumber, maxCapacity)
     {
@@ -33,5 +33,10 @@ public class GasContainer : Container, IHazardNotifier
     public void NotifyHazard(string message)
     {
         Console.WriteLine($"Hazard Notification for {SerialNumber}: {message}");
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + $", pressure: {Pressure}, is hazardous: {IsHazardous}";
     }
 }

@@ -5,8 +5,8 @@ namespace ContainerApp.Containers;
 
 public class LiquidContainer : Container, IHazardNotifier
 {
-    private bool IsHazardous { get; set; }
-    protected LiquidContainer(double height, double ownWeight, double depth, string serialNumber, double maxCapacity, bool isHazardous) : base(height, ownWeight, depth, serialNumber, maxCapacity)
+    public bool IsHazardous { get; set; }
+    public LiquidContainer(double height, double ownWeight, double depth, string serialNumber, double maxCapacity, bool isHazardous) : base(height, ownWeight, depth, serialNumber, maxCapacity)
     {
         IsHazardous = isHazardous;
     }
@@ -29,5 +29,10 @@ public class LiquidContainer : Container, IHazardNotifier
     public void NotifyHazard(string message)
     {
         Console.WriteLine($"Hazard Notification for {SerialNumber}: {message}");
+    }
+
+    public override string ToString()
+    {
+        return base.ToString() + $", is hazardous: {IsHazardous}";
     }
 }

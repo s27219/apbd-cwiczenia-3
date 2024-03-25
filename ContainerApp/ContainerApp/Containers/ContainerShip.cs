@@ -112,4 +112,18 @@ public class ContainerShip
             targetShip.LoadContainer(container);
         }
     }
+
+    public override string ToString()
+    {
+        if (Containers.Count != 0)
+        {
+            string allContainers = "\n";
+            foreach (Container c in Containers)
+            {
+                allContainers += c + "\n";
+            }
+            return $"max speed: {MaxSpeed}, max container count: {MaxContainerCount}, max load weight: {MaxLoadWeight}, containers:{allContainers}";
+        }
+        return $"max speed: {MaxSpeed}, max container count: {MaxContainerCount}, max load weight: {MaxLoadWeight}";
+    }
 }

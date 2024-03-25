@@ -31,4 +31,9 @@ public abstract class Container : IContainer
         }
         CargoWeight = cargoWeight;
     }
+    
+    public override string ToString()
+    {
+        return $"serial number: {SerialNumber}, cargo weight: {CargoWeight}, height: {Height}, own weight: {OwnWeight}, depth: {Depth}, max capacity: {MaxCapacity}";
+    }
 }
