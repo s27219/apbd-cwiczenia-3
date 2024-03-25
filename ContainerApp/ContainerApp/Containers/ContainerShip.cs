@@ -83,7 +83,6 @@ public class ContainerShip
                 }
             }
         }
-        //Containers.RemoveAll(container => container.SerialNumber == serialNumber);
     }
     public void ReplaceContainer(string serialNumber, Container newContainer)
     {
